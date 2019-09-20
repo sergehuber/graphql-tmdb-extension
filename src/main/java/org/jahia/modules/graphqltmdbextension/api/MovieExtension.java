@@ -3,8 +3,8 @@ package org.jahia.modules.graphqltmdbextension.api;
 import graphql.annotations.annotationTypes.GraphQLDescription;
 import graphql.annotations.annotationTypes.GraphQLField;
 import graphql.annotations.annotationTypes.GraphQLTypeExtension;
-import org.jahia.modules.tmdbprovider.api.Movie;
-import org.jahia.modules.tmdbprovider.api.TMDBService;
+import org.jahia.modules.graphqltmdbprovider.api.Movie;
+import org.jahia.modules.graphqltmdbprovider.api.TMDBService;
 import org.jahia.osgi.BundleUtils;
 
 import java.io.IOException;
@@ -24,7 +24,7 @@ public class MovieExtension {
     @GraphQLField
     @GraphQLDescription("Retrieve the homepage of the movie")
     public String getHomepage() throws IOException {
-        com.uwetrottmann.tmdb2.entities.Movie tmdbMovie = tmdbService.executeQuery();
+        com.uwetrottmann.tmdb2.entities.Movie tmdbMovie = tmdbService.getMovie(movie.getId());
         return tmdbMovie.homepage;
     }
 
