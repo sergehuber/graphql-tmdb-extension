@@ -1,1 +1,1 @@
-# graphql-tmdb-extension
+# graphql-tmdb-gqlMovie-extension
